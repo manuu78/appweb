@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plano Interactivo del Restaurante</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="planoInteractivo" style="position: relative;">
+    <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ejemplo de una mesa -->
+        <rect id="mesa1" x="100" y="100" width="100" height="60" fill="#9E9E9E" stroke="#7B7B7B" stroke-width="2" />
+        <!-- Texto informativo que será mostrado/ocultado -->
+        <text x="100" y="95" fill="black" style="display: none;" id="textoMesa1">Mesa para cuatro personas</text>
+    </svg>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

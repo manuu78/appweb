@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumen del Pedido</title>
+    <meta name="theme-color" content="#000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    
+
+
+</head>
+
+
+<style>
+
+@media screen and (max-width: 768px) {
+
+        /* Aplica a todos los elementos para eliminar el color de resaltado predeterminado */
+
+*:not(input, textarea) {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+
+body{
+    margin-top: 2px;
+    margin-bottom: 280px;
+    font-size: 5px;
+    font-family: 'truculenta';
+    background-color: rgb(255, 229, 181);
+    
+}    
+
+
+.header-container {
+    position: fixed;
+    font-size: 10px;
+    color: #ffffff;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #ffa600; /* Color de fondo del encabezado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    z-index: 1000; /* Asegura que esté por encima del contenido desplazado */
+    display: flex; /* Activa Flexbox */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content:initial; /* Distribuye el espacio, pero puedes ajustar según necesidad */
+   
+}
+
+P{
+    font-size: 20PX;
+}
+
+.icon-atras{
+    font-family: 'Material Symbols Outlined', sans-serif; /* Agrega una fuente de respaldo */
+ 
+   font-size: 40px; /* Tamaño de fuente relativo */
+
+
+   color: #ffffff;
+
+
+
+   margin-left: 10px;
+   margin-right: 50px;
+}
+
+.header-container a {
+    text-decoration: none; /* Elimina el subrayado de todos los enlaces dentro del contenedor */
+    
+}
+
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined', sans-serif; /* Agrega una fuente de respaldo */
+   
+    font-size: px; /* Tamaño de fuente relativo */
+  background-color: transparent;
+    letter-spacing:5px; /* Espaciado entre caracteres normal */
+    color: #00000072;
+}
+
+
+
+#resumen-pedido {
+    margin-bottom: 20px;
+    margin-top: 25%; /* Ajusta el margen superior para dejar espacio para el encabezado */
+    margin-bottom: 10px; /* Ajusta el margen inferior para dejar espacio para el contenedor total */
+    
+    overflow-y:hidden; /* Agrega desplazamiento vertical si el contenido supera la altura máxima */
+}
+
+
+
+
+
+#confirmar-pedido {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    font-size: 20px;
+    
+    margin-right: 30px;
+}
+
+.totalcontainer1 {
+    display: flex;
+    justify-content: space-between; /* Distribuye el contenido uniformemente */
+    align-items: center; /* Alinear los ítems al centro verticalmente */
+    position: fixed;
+    bottom: 50px; /* Ajusta este valor según sea necesario */
+    left: 0;
+    width: 100%;
+    color: #ffffff;
+    background-color: #fb9c04; /* Color de fondo del contenedor total */
+    padding: 1px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1001; /* Asegura que esté visualmente por encima en el eje Z si se superpone */
+    font-size: 20px;
+}
+
+
+
+.totalcontainer {
+    display: flex;
+    justify-content: space-between; /* Distribuye el contenido uniformemente */
+    align-items: left;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #ffffff;
+    background-color: #fb9c04; /* Color de fondo del contenedor total */
+    padding: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1000; /* Asegura que esté por encima del contenido desplazado */
+    font-size: 20px;
+
+}
+
+.container-pedido {
+    background-color: #ffffff; /* Fondo blanco para hacer que cada pedido destaque */
+    border: 1px solid #ddd; /* Un borde sutil para definir los límites de cada pedido */
+    border-radius: 8px; /* Esquinas redondeadas para una apariencia moderna y suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Una sombra suave para dar sensación de elevación */
+    margin-bottom: 20px; /* Espacio entre pedidos para evitar que se vean apilados */
+    padding: 15px; /* Espacio interior para no saturar el contenido contra los bordes */
+    transition: box-shadow 0.3s ease, transform 0.2s ease; /* Transiciones suaves para interacciones */
+}
+
+.pedido-imagen {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 50px;
+
+}
+
+.imagen-producto{
+    height: 100px;
+
+}
+ 
+.detalles{
+    display: contents;
+    margin-left: 50px;
+}
+
+.pedido-header {
+    
+    display: flex;
+    justify-content: space-between; /* Separa el título de los botones */
+    align-items: center; /* Alinea verticalmente */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    border-bottom: 2px solid #e0e0e0; /* Un borde sutil debajo del encabezado */
+    padding-bottom: 5px; /* Espacio debajo del contenido antes del borde */
+    margin-bottom: 20px; /* Espacio extra debajo del encabezado para separarlo del resto */
+    
+}
+
+.pedido-titulo {
+    font-size: 20px; /* Hacer el título más grande para darle más presencia */
+    font-weight: bold; /* Opcionalmente, hacerlo más grueso para que destaque */
+    color: #000000; /* Un color más oscuro para el texto puede ayudar a destacarlo */
+    margin-left: 20px; /* Remueve márgenes predeterminados para ajustar según necesidad */
+
+}
+
+.detalles {
+    display: flex;
+    gap: 10px; /* Espacio entre botones */
+}
+
+
+.item-detalles{
+    margin-top: 20px;
+    line-height: 1.5;
+    font-size: 15px;
+   
+}
+
+.editar, .eliminar {
+    font-size: 16px; /* Ajusta el tamaño de la fuente para equilibrar con el diseño general */
+    padding: 10px 15px; /* Añade más espacio alrededor del texto para mejorar la legibilidad */
+    color: rgb(0, 0, 0); /* Color de texto blanco para contraste */
+    border: none; /* Elimina el borde por defecto */
+    border-radius: 4px; /* Suaviza las esquinas para un aspecto más moderno */
+    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+    transition: background-color 0.3s; /* Suaviza la transición de colores */
+    margin: 5px; /* Añade un margen para separar de otros elementos */
+}
+
+.editar {
+    background-color: transparent; /* Un verde claro para "Editar", similar al confirmar pedido para coherencia */
+}
+
+.eliminar {
+    background-color:transparent; /* Un rojo para "Eliminar", indica una acción potencialmente destructiva */
+}
+
+.editar:hover, .eliminar:hover {
+    opacity: 0.8; /* Cambia la opacidad al pasar el mouse para indicar interactividad */
+}
+
+.editar:active, .eliminar:active {
+    transform: scale(0.95); /* Efecto de "presión" al hacer clic */
+}
+
+}
+
+
+
+ 
+
+</style>
+
+
+
+<body>
+
+    <div class="header-container">
+       
+        <a id="volver-a-la-carta" href="2.lacarta.html" role="button"><span class="icon-atras">
+            arrow_back
+            </span></a>
+
+            <div class="titulo-contenedor"><h1 id="direccionRestaurante"></h1><span class="material-symbols-outlined">pin_drop</span></div>
+
+            <button onclick="cambiarUbicacion()">Cambiar Ubicación</button>
+            
+   
+
+
+        
+    </div>
+
+    <div id="resumen-pedido">
+        <!-- Los artículos del pedido se insertarán aquí dinámicamente -->
+    </div>
+    <button id="vaciar-pedido" class="btn-vaciar">Vaciar Pedido</button>
+    <div class="totalcontainer1">
+    <p>Total: <span id="total-pedido">0</span></p>
+
+</div>
+    <div class="totalcontainer">
+ 
+    <!-- Botón para vaciar el pedido -->
+
+    <a id="volver-a-la-carta" href="2.lacarta.html" role="button">AÑADIR MAS</a>
+<button id="confirmar-pedido">Confirmar Pedido</button>
+
+    </div>
+
+
+    
+</div>
+   
+    
+   
+</body>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const resumenPedido = document.getElementById('resumen-pedido');
+        const totalPedido = document.getElementById('total-pedido');
+        // Diccionario de imágenes de productos
+        const productoImagenes = {
+            "Pistacho": "imagenes/pistacho.png",
+            "Oreo": "imagenes/oreo.png",
+            "Kinder": "ruta/a/imagen/kinder.jpg",
+            "Lotus": "ruta/a/imagen/lotus.jpg"
+        };
+
+        function actualizarResumen() {
+            let articulosPedido = JSON.parse(localStorage.getItem('pedidos')) || [];
+            let total = 0;
+            resumenPedido.innerHTML = ''; // Limpia el contenedor antes de volver a llenarlo.
+
+            articulosPedido.forEach((articulo, index) => {
+                const elemento = document.createElement('div');
+                elemento.classList.add('item-pedido');
+                const imagenProducto = productoImagenes[articulo.nombre] || 'ruta/a/imagen/default.jpg'; // Imagen por defecto si no se encuentra
+                elemento.innerHTML = `
+                <div class="container-pedido">
+                    <div class="pedido-header">
+                        <h2 class="pedido-titulo">${articulo.nombre}</h2>
+                        <div class= "detalles">
+                            <button class="editar" data-index="${index}" data-nombre="${articulo.nombre}">
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                            <button class="eliminar" data-index="${index}">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pedido-imagen">
+                        <img src="${imagenProducto}" alt="${articulo.nombre}" class="imagen-producto">
+                        <div class="item-detalles"> 
+                            Tamaño: <strong>${articulo.tamano}</strong> <br>
+                            Cantidad: <strong>${articulo.cantidad}</strong> <br>
+                            Precio: <strong>${articulo.precio}</strong> 
+                        </div>
+                    </div>
+                </div>`;
+
+                resumenPedido.appendChild(elemento);
+
+                let precioNumerico = parseFloat(articulo.precio.replace('€', '')) || 0;
+                total += precioNumerico;
+            });
+
+            totalPedido.textContent = `${total.toFixed(2)}€`;
+
+            document.querySelectorAll('.eliminar').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (confirm('¿Estás seguro de querer eliminar este pedido?')) {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        articulosPedido.splice(index, 1);
+                        localStorage.setItem('pedidos', JSON.stringify(articulosPedido));
+                        actualizarResumen();
+                    }
+                });
+            });
+
+            // Diccionario para mapear nombres de productos a URLs
+            const productoUrl = {
+                "Pistacho": "2.1.1 pistacho.html",
+                "Oreo": "2.1.2 oreo.html",
+                "Kinder": "2.1.3 kinder.html",
+                "Lotus": "2.1.4 lotus.html"
+            };
+
+            document.querySelectorAll('.editar').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = this.getAttribute('data-index');
+                    const nombreProducto = this.getAttribute('data-nombre');
+
+                    // Comprobamos que el nombre del producto esté en nuestro diccionario
+                    if (nombreProducto in productoUrl) {
+                        const paginaProducto = productoUrl[nombreProducto];
+                        const queryParams = new URLSearchParams({
+                            index: index,
+                            nombre: nombreProducto
+                        }).toString();
+                        window.location.href = `${paginaProducto}?${queryParams}`;
+                    } else {
+                        console.error("Nombre del producto no reconocido.");
+                    }
+                });
+            });
+        }
+
+        actualizarResumen();
+
+
+        
+        document.getElementById('vaciar-pedido').addEventListener('click', function() {
+            if (confirm('¿Estás seguro de querer vaciar todo el pedido?')) {
+                localStorage.removeItem('pedidos'); // Elimina todos los pedidos
+                resumenPedido.innerHTML = ''; // Limpia visualmente el resumen del pedido
+                totalPedido.textContent = '0.00€'; // Reinicia el total del pedido
+                alert('El pedido ha sido vaciado.');
+                window.location.href = '2.lacarta.html';
+            }
+        });
+    });
+
+    window.addEventListener("orientationchange", function() {
+        if (window.orientation === 90 || window.orientation === -90) {
+            // Orientación horizontal detectada
+            alert("Por favor, mantén tu dispositivo en orientación vertical para la mejor experiencia.");
+        }
+    });
+
+    document.getElementById('confirmar-pedido').addEventListener('click', function() {
+    // Confirmar antes de proceder
+    if (confirm('¿Confirmar el pedido?')) {
+        // Guarda el pedido actual en una variable temporal en localStorage
+        let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+        localStorage.setItem('pedidoTemporal', JSON.stringify(pedidos));
+        
+        // Redirige al usuario a la página de selección de mesas
+        window.location.href = 'opcionesderecogida.html';
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var direccionRestaurante = localStorage.getItem('ubicacionRestaurante');
+    document.getElementById('direccionRestaurante').textContent = direccionRestaurante;
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarVisibilidadPedido();
+});
+
+function cambiarUbicacion() {
+    // Comprueba si existe algún pedido guardado
+    var pedidos = localStorage.getItem('pedidos');
+    
+    // Solo muestra el mensaje de confirmación si hay pedidos guardados
+    if (pedidos !== null && pedidos.length > 0) {
+        var confirmacion = confirm("¿Estás seguro de que quieres cambiar la ubicación? Esto eliminará todos los productos de tu pedido actual.");
+        
+        // Si el usuario acepta, procede a borrar la información y redirigir
+        if (confirmacion) {
+            limpiarDatosYRedirigir();
+        } else {
+            // El usuario canceló la acción
+            console.log("Cambio de ubicación cancelado por el usuario.");
+        }
+    } else {
+        // No hay pedidos, simplemente limpia los datos y redirige
+        limpiarDatosYRedirigir();
+    }
+}
+
+function limpiarDatosYRedirigir() {
+    // Borra el pedido existente y cualquier otro dato relacionado
+    localStorage.removeItem('pedidos');
+    localStorage.removeItem('restauranteSeleccionado');
+    localStorage.removeItem('ubicacionRestaurante');
+
+    // Redirige al usuario para seleccionar otro restaurante
+    window.location.href = 'ubicacion1.html';
+}
+
+
+</script>
+
+</html>
+
+
+
+    

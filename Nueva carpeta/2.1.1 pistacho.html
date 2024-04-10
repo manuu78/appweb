@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="cheesecake artesanal, Teatinos, postres gourmet, cheesecake casero, pastelería en Málaga">
+    <meta name="description" content="Descubre los mejores cheesecakes artesanales en Málaga. Saborea nuestro menú único con opciones variadas para todos los gustos. Visítanos y vive una experiencia culinaria inolvidable.">
+    <meta name="theme-color" content="#000">
+    <meta name="robots" content="index, follow">
+
+
+<meta property="og:title" content="C de Cheesecake Teatinos">
+    <meta property="og:description" content="Disfruta de nuestros deliciosos cheesecakes artesanales en Teatinos.">
+    <meta property="og:image" content="ruta/a/imagen/promocional.jpg">
+    <meta property="og:url" content="https://tusitio.com">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C de Cheesecake Teatinos">
+    <meta name="twitter:description" content="Disfruta de nuestros deliciosos cheesecakes artesanales en Teatinos.">
+<meta name="twitter:image" content="ruta/a/imagen/promocional.jpg">
+
+
+    <title>CdeCheeseCake</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Love+Ya+Like+A+Sister&family=Permanent+Marker&family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <link rel="manifest" href="j.json">
+
+    <link rel="stylesheet" href="media2.css">
+    <link rel="icon" type="image/png" href="imagenes/logocdecheesecake.png">
+
+<link rel="alternate" href="pagina en ingles" type="application/atom+xml" title="Atom" hreflang="en-GB">
+
+<link rel="canonical" href="https.pagina principal"> 
+
+<style>
+
+html, body {
+    height: 100vh; /* Asegura que el body ocupe el 100% de la altura de la ventana */
+    margin: 0; /* Elimina los márgenes predeterminados del navegador */
+    padding: 0; /* Elimina el relleno predeterminado del navegador */
+    background-attachment: fixed;
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.2));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'truculenta', sans-serif;
+    border: 4px solid #9fd32e; /* Cambia '4px' por el grosor deseado y '#9fd32e' por el color de tu elección */
+    box-sizing: border-box; /* Incluye el ancho del borde y el relleno en el cálculo del ancho/altura del elemento */
+}
+
+    
+.cabecera {
+
+display: flex; /* Activa Flexbox para la cabecera */
+align-items: center; /* Alinea verticalmente los elementos dentro de la cabecera */
+justify-content: space-between; /* Separa el botón del título */
+position:absolute;
+top: 0;
+left: 0;
+height: 50px;
+width: 100%;
+background-color: #9fd32e; /* Elige un color de fondo adecuado */
+color: #ffffff;
+z-index: 1000; /* Asegura que la cabecera se muestre por encima de otros elementos */
+
+}
+
+
+.cabecera h1 {
+margin: 0 0 0 10px; /* Elimina el margen predeterminado y añade margen a la izquierda */
+color: #ffffff; /* Establece el color del texto, ajusta según necesites */
+font-size: 20px; /* Ajusta el tamaño del texto según necesites */
+}
+
+.titulo-contenedor {
+flex-grow: 1; /* Permite que el contenedor del título crezca y ocupe el espacio disponible */
+display: flex;
+justify-content: center; /* Centra el título horizontalmente */
+align-items: center; /* Centra el título verticalmente */
+}
+
+.producto-container{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.imgpistacho{
+   
+        width: 25vh; /* Ajusta según la necesidad */
+        height: 25vh; /* Mantiene la proporción de aspecto de la imagen */
+    }  
+
+    .tamano-btn {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border: 1px solid #bfff00; /* Color de tu elección */
+    background-color: #ffffff; /* Fondo blanco o el color que prefieras */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.tamanos-container p {
+    text-align: center; /* Centra el texto horizontalmente */
+    width: 100%; /* Asegura que el párrafo ocupe todo el ancho del contenedor */
+}
+
+
+.tamano-btn:hover {
+    background-color: #aaff00; /* Cambio de color al pasar el mouse */
+    color: #ffffff;
+}
+
+.tamanos-opciones {
+    display: flex;
+    justify-content: center; /* Centra los botones en el contenedor */
+}
+
+.cantidad-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.cantidad-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #a2ff00; /* Ajusta este color según tu diseño */
+    border-radius: 20px; /* Bordes redondeados para un look moderno */
+    overflow: hidden; /* Evita que los hijos sobresalgan del borde redondeado */
+}
+
+.btn-cantidad {
+    background-color: #bbff0062; /* Color de fondo para los botones */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Estilo del cursor */
+    padding: 10px; /* Ajusta el relleno según necesites */
+    font-size: 20px; /* Tamaño del texto */
+    height: 40px; /* Altura del botón */
+    width: 40px; /* Anchura del botón para hacerlo cuadrado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.btn-cantidad:hover {
+    background-color: #95ff00; /* Oscurece el botón al pasar el ratón */
+}
+
+#cantidad {
+    width: 50px; /* Anchura del input */
+    border: none; /* Sin borde */
+    text-align: center; /* Centra el texto */
+    font-size: 16px; /* Tamaño del texto */
+    background-color: transparent; /* Fondo transparente */
+    color: #333; /* Color del texto */
+}
+.tamano-btn.seleccionado {
+    background-color: #a7d91d; /* Color cuando el botón está seleccionado */
+    color: white;
+}
+
+
+.precio-texto {
+    font-size: 24px; /* Tamaño de fuente grande para destacar */
+    font-weight: bold; /* Hacer el texto más grueso */
+    color: #ffffff; /* Color del texto oscuro para contraste */
+    padding-right: 20px;
+}
+
+#precio {
+    font-size: 24px; /* Tamaño de la fuente para el precio */
+    color: #000000; /* Color para destacar el precio */
+}
+
+
+
+.btn-anadir {
+    padding: 10px 100px;
+    background-color: #9fd32e; /* Ajusta el color según tu diseño */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-anadir:hover {
+    background-color: #8ec219; /* Oscurece el botón para indicar interactividad */
+}
+
+.notificacion {
+            position: absolute;
+            top: calc(70% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff4e5; /* Un fondo sutil que indique precaución */
+            border: 1px solid #ffcc00; /* Borde para destacar la importancia */
+            padding: 10px 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            display: none;
+        }
+.alergenos-container {
+    display: none; /* Inicialmente oculto */
+    position: fixed; /* Posición fija respecto al viewport */
+    top: 20%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
+    width: 80%; /* Ancho del contenedor, ajusta a tu preferencia */
+    max-width: 400px; /* Máximo ancho del contenedor */
+    margin-top: 0; /* No necesitamos margen superior ya que está absolutamente posicionado */
+    padding: 15px;
+    background-color: #fff4e5; /* Un fondo sutil que indique precaución */
+    border: 1px solid #ffcc00; /* Borde para destacar la importancia */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 100; /* Asegura que el contenedor esté sobre otros elementos */
+    
+}
+
+.alergenos-container h3 {
+    color: #ff9007; /* Un color que denote atención */
+    margin-bottom: 10px;
+}
+
+.alergenos-container p {
+    color: #333; /* Color oscuro para facilitar la lectura */
+    font-size: 16px; /* Tamaño de fuente legible */
+}
+
+.btnalergenos{
+display: flex;
+background-color: transparent;
+border: none;
+
+}
+
+.material-symbols-outlined{
+    font-size: 30px;
+
+
+}
+.alergenos {
+    position: absolute; /* O usa 'absolute' si es dentro de un contenedor con 'position: relative;' */
+    top: 85px;
+    right: 0;
+    margin: 10px; /* Ajusta el margen según necesites */
+    z-index: 100; /* Asegúrate de que se muestre por encima de otros elementos */
+}
+
+#volver-a-la-carta{
+    padding-left: 10px;
+    color: #ffffff;
+}
+
+</style>
+
+</head>
+
+
+
+<body>  
+
+
+
+    
+    <header class="cabecera">
+
+            <a id="volver-a-la-carta" href="2.1.cheesecake.html" role="button"><span class="material-symbols-outlined">
+              arrow_back</span></a>
+
+            <p class="precio-texto">Precio: <span id="precio">0€</span></p>
+
+    </header>
+   
+    
+    
+    
+
+
+    
+
+        <div class="producto-container">
+           
+            <div class="titulo-contenedor"><h1>PISTACHO</h1></div>
+
+            <div class="alergenos">
+                
+                <button id="btnMostrarAlergenos" class="btnalergenos"><span class="material-symbols-outlined">
+                    error
+                    </span></button> <!-- Botón para mostrar alérgenos -->
+                <div class="alergenos-container" id="contenedorAlergenos" style="display: none;"> <!-- Asegúrate de que esté oculto inicialmente -->
+                    <h3>Alérgenos</h3>
+                    <p>Este producto contiene: Pistachos, Huevos, Harina de trigo.</p>
+                </div>
+            </div>
+
+       
+
+            <img class="imgpistacho" id="imgpista" src="imagenes/pistacho.png" alt="Tarta de Pistacho" class="producto-imagen">
+        
+            
+            
+
+            <div class="tamanos-container">
+
+                <p><strong>tamaño:</strong></p>
+
+                <div class="tamanos-opciones">
+                   <button class="tamano-btn" data-tamano="pequeño" onclick="seleccionarTamano('pequeño', 6)">P</button>
+                   <button class="tamano-btn" data-tamano="mediano" onclick="seleccionarTamano('mediano', 12)">M</button>
+                   <button class="tamano-btn" data-tamano="grande" onclick="seleccionarTamano('grande', 18)">G</button>
+                </div>
+            </div>
+    
+    
+            <div class="cantidad-container">
+                <p><strong>Cantidad:</strong></p>
+                <div class="control-cantidad">
+                    <button class="btn-cantidad btn-menos" onclick="cambiarCantidad(-1)">−</button>
+                    <input type="number" id="cantidad" value="1" min="1">
+                    <button class="btn-cantidad btn-mas" onclick="cambiarCantidad(1)">+</button>
+                </div>
+            </div>
+            
+            
+
+            <div id="notificacion-tamano" class="notificacion">
+
+               <p>Por favor, selecciona un tamaño antes de añadir al pedido.</p>
+            </div>
+        
+
+
+            <button id="btnAnadirAlPedido"class="btn-anadir" onclick="anadirAlPedido()"><span class="material-symbols-outlined">
+                shopping_cart
+                </span></button>
+        </div>
+           
+
+
+
+        
+        
+           
+    
+    
+    
+
+
+    <footer>
+        <p></p>
+        <!-- Incluye tu dirección, teléfono, y enlaces a redes sociales aquí -->
+    </footer>
+
+</body>
+
+
+
+<script>
+    let precios = {
+        'pequeño': 3.80,
+        'mediano': 15,
+        'grande': 20
+    };
+    let tamanoSeleccionado = 'pequeño'; // Valor inicial para nuevo pedido
+    let cantidad = 1; // Cantidad inicial para nuevo pedido
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Extraer parámetros de la URL si existen (para edición)
+        const queryParams = new URLSearchParams(window.location.search);
+        const index = queryParams.get('index'); // Índice del pedido a editar, si se está editando
+    
+        if (index !== null) {
+            // Estamos en modo de edición, cambiamos el texto del botón.
+            document.getElementById('btnAnadirAlPedido').textContent = 'Guardar cambios';
+            cargarDatosPedido(index);
+        }
+        
+        // Resto del código aquí...
+    });
+
+    function cargarDatosPedido(index) {
+        const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+        if (pedidos[index]) {
+            const pedido = pedidos[index];
+            tamanoSeleccionado = pedido.tamano;
+            cantidad = pedido.cantidad;
+            document.querySelector(`.tamano-btn[data-tamano="${pedido.tamano}"]`).click();
+            document.getElementById('cantidad').value = cantidad;
+            actualizarPrecio();
+        }
+    }
+
+    function seleccionarTamano(tamano, numPorciones) {
+        tamanoSeleccionado = tamano;
+        document.querySelectorAll('.tamano-btn').forEach(btn => {
+            btn.classList.remove('seleccionado');
+            if(btn.getAttribute('data-tamano') === tamano){
+                btn.classList.add('seleccionado');
+            }
+        });
+        let imgpista = document.getElementById('imgpista');
+        if (tamano === 'pequeño') {
+            imgpista.style.transform = 'scale(0.5)';
+        } else if (tamano === 'mediano') {
+            imgpista.style.transform = 'scale(0.75)';
+        } else if (tamano === 'grande') {
+            imgpista.style.transform = 'scale(1)';
+        }
+        actualizarPrecio();
+    }
+
+    function cambiarCantidad(cambio) {
+        let cantidadInput = document.getElementById("cantidad");
+        let nuevaCantidad = parseInt(cantidadInput.value) + cambio;
+        cantidad = nuevaCantidad > 0 ? nuevaCantidad : 1;
+        cantidadInput.value = cantidad;
+        actualizarPrecio();
+    }
+
+    function actualizarPrecio() {
+        let precioBase = precios[tamanoSeleccionado];
+        let precioTotal = precioBase * cantidad;
+        document.getElementById("precio").textContent = `${precioTotal.toFixed(2)}€`;
+    }
+
+    function anadirAlPedido() {
+    const tamanoBtnSeleccionado = document.querySelector('.tamano-btn.seleccionado');
+    if (!tamanoBtnSeleccionado) {
+        mostrarNotificacion(); // Muestra la notificación si no se ha seleccionado un tamaño
+        return;
+    }
+    
+    const nombreProducto = "Pistacho"; // Asegúrate de cambiar esto al nombre del producto correspondiente
+    const tamanoSeleccionado = tamanoBtnSeleccionado.getAttribute('data-tamano');
+    const cantidadInput = document.getElementById('cantidad');
+    const cantidad = parseInt(cantidadInput.value);
+
+    let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+    const queryParams = new URLSearchParams(window.location.search);
+    const editIndex = queryParams.get('index') !== null ? parseInt(queryParams.get('index')) : -1;
+
+    // Buscar si ya existe un producto igual en el pedido (excluyendo el actualmente editado)
+    const index = pedidos.findIndex((pedido, i) => pedido.nombre === nombreProducto && pedido.tamano === tamanoSeleccionado && i !== editIndex);
+
+    if (index > -1) {
+        // Si el producto ya existe y no estamos editando el mismo, sumamos las cantidades
+        pedidos[index].cantidad += cantidad;
+        pedidos[index].precio = `${(precios[pedidos[index].tamano] * pedidos[index].cantidad).toFixed(2)}€`;
+        if (editIndex > -1) {
+            // Si estamos editando y es diferente del que vamos a actualizar, eliminamos el editado
+            pedidos.splice(editIndex, 1);
+        }
+    } else {
+        // Si no existe o estamos añadiendo uno nuevo, creamos o actualizamos el pedido
+        const pedido = {
+            nombre: nombreProducto,
+            tamano: tamanoSeleccionado,
+            cantidad: cantidad,
+            precio: `${(precios[tamanoSeleccionado] * cantidad).toFixed(2)}€`
+        };
+        
+        if (editIndex > -1) {
+            // Actualizamos el pedido existente
+            pedidos[editIndex] = pedido;
+        } else {
+            // Modo de creación, agregamos un nuevo pedido
+            pedidos.push(pedido);
+        }
+    }
+
+    localStorage.setItem('pedidos', JSON.stringify(pedidos));
+
+    // Redirigir al usuario a la página del pedido
+    window.location.href = '2.lacarta.html';
+}
+
+
+
+    function mostrarNotificacion() {
+        let notificacion = document.getElementById('notificacion-tamano');
+        notificacion.style.display = 'block';
+        setTimeout(function() {
+            notificacion.style.display = 'none';
+        }, 3000); // Desaparece después de 3 segundos (3000 milisegundos)
+    }
+
+    document.getElementById('btnMostrarAlergenos').addEventListener('click', function() {
+        var contenedorAlergenos = document.getElementById('contenedorAlergenos');
+        contenedorAlergenos.style.display = 'block';
+
+        // Cierra el mensaje después de 3 segundos
+        setTimeout(function() {
+            contenedorAlergenos.style.display = 'none';
+        }, 3000); // 3000 milisegundos = 3 segundos
+    });
+
+    // Función para cerrar el contenedor de alérgenos al hacer clic fuera
+    document.addEventListener('click', function(event) {
+        var contenedorAlergenos = document.getElementById('contenedorAlergenos');
+        var btnMostrarAlergenos = document.getElementById('btnMostrarAlergenos');
+
+        // Verifica si el clic fue fuera del contenedor de alérgenos y del botón
+        if (!contenedorAlergenos.contains(event.target) && !btnMostrarAlergenos.contains(event.target) && contenedorAlergenos.style.display === 'block') {
+            contenedorAlergenos.style.display = 'none';
+        }
+    });
+
+    document.getElementById('cantidad').addEventListener('change', function() {
+        cantidad = parseInt(this.value) || 1; // Asegura que la cantidad sea al menos 1
+        this.value = cantidad; // Actualiza el campo de entrada con el valor corregido
+        actualizarPrecio();
+    });
+
+    document.getElementById('cantidad').addEventListener('change', function() {
+        let nuevaCantidad = parseInt(this.value) || -1; // Cambio para manejar "0" como un caso especial
+
+        if (nuevaCantidad <= 0) {
+            if (nuevaCantidad === 0) {
+                // Manejo específico para cuando la cantidad es "0"
+                let confirmar = confirm("La cantidad es 0. ¿Deseas eliminar este producto?");
+                if (confirmar) {
+                    // Aquí se debería manejar la lógica para eliminar el producto
+                    // Por ejemplo: eliminarProducto(); O algún otro manejo como ocultar el elemento del DOM
+                    alert("Producto eliminado."); // Placeholder para tu lógica de eliminación
+                } else {
+                    // Si el usuario decide no eliminar el producto, se restablece la cantidad al último valor válido conocido o a 1
+                    this.value = 1;
+                    cantidad = 1;
+                    actualizarPrecio();
+                }
+            } else {
+                // Manejo para valores negativos o no válidos
+                alert("La cantidad no puede ser menor o igual a 0.");
+                this.value = 1; // Restablecer a 1 o al último valor válido conocido
+                cantidad = 1;
+                actualizarPrecio();
+            }
+        } else {
+            // Si la cantidad es válida y mayor que 0, procede como normalmente
+            cantidad = nuevaCantidad;
+            actualizarPrecio();
+        }
+    });
+</script>
+
+
+
+
+
+</html>
+
+
+
+
